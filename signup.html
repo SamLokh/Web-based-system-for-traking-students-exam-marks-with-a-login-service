@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head><title>Signup Page</title>
+<script>
+	
+</script>
+</head>
+<!--body class="body" onload="hide()"-->
+	
+<body class="body" onload="hide2()" id="bd">
+	
+	<font size="5"><!-- -->
+		
+		
+    <form id="f2" name="SignupForm" action="./files/adduser.php" method="post" onsubmit="return cside_validation()">
+		
+    <!--pre--> 
+	<h1 align="center"><b><u>Signup</u></b></h1>						
+	<h2 align="center"><b>Enter the following details : </b></h2><br>
+				And you are a : <select name="level" autofocus onchange="checklevel()" required>
+            <option value="default" selected>Default</option>
+            <option value="faculty">Faculty</option>
+            <option value="student">Student</option>
+        </select><br>
+	
+				First Name :  <input type="text" id="fname" name="firstname" required><br><br>
+				Middle Name : <input type="text" id="mname" name="middlename" ><br><br>
+				Last Name :   <input type="text" id="lname" name="lastname" required><br>
+   				<br>
+				<div id="d1">
+				Roll No. : 	  <input type="number" id="rno" name="rollno" min="3" maxlength="3"><br>
+					
+				Seat No. : 	  <input type="text" id="sno" name="seatno"><br>
+					
+				Current year : <select name="year">
+            <option value="F.E." selected>First Year (F.E.)</option>
+            <option value="S.E.">Second Year (S.E.)</option>
+            <option value="T.E.">Third Year (T.E.)</option>
+		    <option value="B.E.">Fourth Year (B.E.)</option>
+    </select></div><br>
+				Email : 	 <input type="email" id="em" name="email" required><br>
+				Contact Number : <input type="number" id="num" name="number" min="8" maxlength="8" required><br>
+		
+			Password : <input type="password" name="pass" required><br>
+			Re-enter Password : <input type="password" name="repass" required><br>
+		
+						<input type="submit" value="Submit">	
+		
+		<textarea name="textarea"></textarea>
+		
+						<input type="reset" value="Reset Form Data">
+		</form>
+                        <button id="rebutton" onclick="resetform()">Reset</button>
+        <br>
+		
+		
+    <!--/pre-->
+	<!--/form-->
+		
+<script>
+		
+		//document.getElementById("bd").addEventListener("onload",hide);
+		
+		//document.getElementById("lname").addEventListener("blur",showhide);
+		//document.getElementById("lname").addEventListener("focusout",showhide);
+	
+		//document.SignupForm.fname.addEventListener("onfocus",checklevel);
+		document.SignupForm.level.addEventListener("blur",checklevel);
+	
+		//var l=document.forms["SignupForm"].["level"].value;
+	
+		document.SignupForm.level.addEventListener("change",checklevel);
+	
+		var d=document.getElementById("d1");
+	
+		//var d3=document.getElementById("d1");
+		//window.onload=hide;
+		/*
+		function hide3(){
+			//alert("mid script.");
+			d3.style.display="none";}
+		*/
+		function showhide()
+		{
+			var l=document.SignupForm.level.value;
+		//	//alert("Inside showhide");
+		//	//alert("div : "+d);
+		//	//alert("level : "+l);
+			if(l=="student")
+			{
+		//		//alert("inside the if student statement");
+				d.style.display="block";
+			}
+		}
+	
+		function checklevel()
+		{
+			
+			var l=document.SignupForm.level.value;
+			//alert("Inside checklevel(), current value of level : "+l);
+			if(l=="default")
+				{
+					//alert("Please enter your academic hierarchical level");
+					document.SignupForm.level.focus();
+				}
+			else
+				{
+		//			//alert("Inside the else i.e. the readonly/disabled action");
+					var ta=document.SignupForm.textarea;
+					ta.value="";
+					ta.value=document.SignupForm.level.value;
+		//			//alert("textarea value : "+ta.value);
+					document.SignupForm.level.disabled=true;
+					showhide();
+				}
+		}
+	
+		function cside_validation()
+		{
+			var p=document.SignupForm.pass.value;
+			var rep=document.SignupForm.repass.value;
+			
+			if(p!=rep)
+				{
+					document.SignupForm.pass.value="";
+					document.SignupForm.repass.value="";
+					
+		//			//alert("The passwords do not match, please re-enter them.");
+					return false;
+				}
+			
+			/*
+			
+			var l=document.SignupForm.textarea.value;
+			var r=document.SignupForm.rollno.value;
+			var s=document.SignupForm.seatno.value;
+			var y=document.SignupForm.year.value;
+			
+			if(l=="student")
+				{
+					if(r.length==3)
+						{
+							//something like y=te than r=3**, if y=se
+						}
+				}
+			*/
+		}
+	
+		function resetform()
+		{
+			location.reload();
+		}
+	
+		</script>
+	
+	
+<script>
+	var d2=document.getElementById("d1");
+	function hide2()
+	{
+		//	alert("Inside hide2");
+			//var ll = document.SignupForm.level;
+			//ll.focus();
+			
+			var ta=document.SignupForm.textarea;
+			ta.style.display="none";
+			//alert("level value : "+ll);
+			
+		//	alert("last script");
+			d2.style.display="none";
+			//d2.style.visibility="none";
+	}
+
+		</script>
+
+</font>
+</body>
+</html>
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head><title>Main Page</title>
+<script>
+
+    </script>
+	
+</head>
+
+<body class="body">
+   
+<!--<font size="5"-->
+	<!-- -->
+    <form id="f1" name="LoginForm" action="./files/loginverify.php" onsubmit="return c_validate()" method="post">
+        <!--pre-->
+                            
+	<h1 align="center"><b><u>Result</u></b></h1>
+                            <br>
+							<br>
+	<h3 align="center"><b>Login</b></h3>
+                            <br>
+    <br>
+	
+	Login as : 
+        <select name="level">
+            <option value="faculty" selected>Faculty</option>
+            <option value="student">Student</option>
+        </select>
+		
+	<br>
+	<br>
+		
+	Username : <input type="text" id="uname" name="username" placeholder="Enter your email address" required>
+	<br>
+    Password : <input type="password" id="pass" name="password" min="8" required>
+	<br>
+		
+		<input type="submit" value="Submit">
+                            
+        <br>
+		
+		<a href="./signup.html">Sign Up!</a>
+		
+    <!--/pre-->
+	</form>
+<script>
+function c_validate()
+{
+	var pass=document.LoginForm.password.value;
+	if(pass.length<8)
+		{
+			alert("Password must be at least 8 characters long. Please enter again.");
+			return false;
+		}
+}
+</script>
+       
+<!--</font-->
+</body>
+</html>
+
