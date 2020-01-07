@@ -1,7 +1,6 @@
 # Web-based-system-for-traking-students-exam-marks-with-a-login-service
 
-The name of the repository pretty much sums it up I suppose...
-
+***:
 So basically, I hosted this web based system on an Ubuntu Server image on Virtual box using Apache server. I've used PHP for server side verification and functionality, Javascript for some client side verification, MySQL database management system for storing the data, HTML and some PHP for the webpages.
 Basically the LAMP(Linux Apache MySQL PHP) stack.  
 
